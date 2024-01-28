@@ -6,7 +6,7 @@ public class Jukebox {
         String value = switch (position) {
             case 1 -> "Пусть бегут неуклюже";
             case 2 -> "Спокойной ночи";
-            default -> "Песня не найдена";
+            default -> "Песня не найдена!";
         };
         System.out.println(value);
     }
