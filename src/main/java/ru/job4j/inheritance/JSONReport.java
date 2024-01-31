@@ -9,12 +9,4 @@ public class JSONReport extends TextReport {
                 + "\t\"body\" : " + "\"" + body + "\"" + System.lineSeparator()
                 + "}";
     }
-
-    public static void main(String[] args) {
-        String name = "Report's name";
-        String body = "Report's body";
-        JSONReport report = new JSONReport();
-        String text = report.generate("Report's name", "Report's body");
-        System.out.println(text);
-    }
 }
