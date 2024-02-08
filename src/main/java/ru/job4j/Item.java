@@ -1,7 +1,7 @@
 package ru.job4j;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
+import java.time.format.DateTimeFormatter;
 
 public class Item {
     private int id;
@@ -9,6 +9,9 @@ public class Item {
     private String name;
 
     private LocalDateTime created = LocalDateTime.now();
+
+    private static final DateTimeFormatter FORMATTER
+                         = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
     public Item() {
     }
@@ -36,6 +39,15 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", created=" + created.format(FORMATTER)
+                + '}';
     }
 
     public LocalDateTime getCreated() {
