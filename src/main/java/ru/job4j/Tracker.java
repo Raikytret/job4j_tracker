@@ -45,20 +45,20 @@ public class Tracker {
         return index != -1 ? items[index] : null;
     }
 
-    public boolean replace(int id, Item updateItem) {
-        boolean result = false;
-        Item i = findById(id);
-        if (i != null) {
-            i.setName(updateItem.getName());
-            result = true;
+    public boolean replace(int id, Item item) {
+        int index = indexOf(id);
+        boolean result = index != -1;
+        if (result) {
+            items[index].setName(item.getName());
         }
         return result;
     }
 
     public void delete(int id) {
         int index = indexOf(id);
+        boolean result = index != -1;
         int length = size - index - 1;
-        if (index != -1) {
+        if (result) {
             System.arraycopy(items, index + 1, items, index, length);
             items[size - 1] = null;
             size--;
