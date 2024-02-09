@@ -1,7 +1,6 @@
 package ru.job4j.pojo;
 
 public class Library {
-    @SuppressWarnings("checkstyle:EmptyLineSeparator")
     public static void main(String[] args) {
         Book first = new Book("Pushkin", 100);
         Book second = new Book("Dumas", 200);
@@ -25,7 +24,7 @@ public class Library {
         }
         System.out.println("Printing only Clean code");
         for (Book book : books) {
-            if (book.getName().equals("Clean code")) {
+            if ("Clean code".equals(book.getName())) {
                 System.out.println(book.getName() + " - " + book.getCount());
             }
         }
