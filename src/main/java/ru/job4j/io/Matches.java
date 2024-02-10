@@ -14,9 +14,7 @@ public class Matches {
             String startPhrase = count < 3 ? " введите число от 1 до " + count : " введите число от 1 до 3:";
             System.out.println(player + startPhrase);
             int matches = Integer.parseInt(input.nextLine());
-            if (matches > 3  || matches < 1) {
-                System.out.println("Некорректное значение");
-            } else if (matches > count) {
+            if (matches > 3  || matches < 1 || matches > count) {
                 System.out.println("Некорректное значение");
             } else {
                 count -= matches;
